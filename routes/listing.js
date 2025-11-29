@@ -1,12 +1,12 @@
 const express = require("express")
 const router = express.Router()
 const wrapAsync = require("../utils/wrapAsync.js")
-const Listing = require("../majorprojects/models/listing.js");
+const Listing = require("../models/listing.js");
 const {isLoggedIn,isOwner,validateListing} = require("../midelware.js")
 const multer = require("multer")
 const {storage} = require("../cloudnaryConfig.js")
 const upload = multer({storage})
-const listingController = require("../majorprojects/controllers/listings.js")
+const listingController = require("../controllers/listings.js")
 
 
 //Index Route
