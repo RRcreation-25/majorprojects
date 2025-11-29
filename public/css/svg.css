@@ -1,0 +1,16 @@
+body{
+    background-color: rgb(255, 255, 255);
+}
+
+
+.s{
+    width: 100%;
+   
+    /* let content determine height instead of forcing 800px */
+    padding: 1rem 0;
+    overflow: visible;
+}
+
+
+
+

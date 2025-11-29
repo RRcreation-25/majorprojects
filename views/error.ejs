@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/error.css">
+</head>
+<body>
+    
+    <div id="message">
+	<div id="m1"><%= err.message %></div>
+	<div id="m2"><%= err.statusCode%></div>
+	<div id="m3">The server encountered an internal error or
+		misconfiguration and was unable to complete your request.</div>
+	<div id="m4">Our "experts" are trying to fix the problem, please stand by.</div>
+</div>
+<div id="charactersDiv">
+</div>
+<canvas id="canvas"></canvas>
+<script src="/js/error.js"></script>    
+</body>
+</html>

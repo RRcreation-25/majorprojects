@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+     rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
+     crossorigin="anonymous">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+
+    <style>
+      .card{
+        margin-left: 1.5rem;
+      }
+        .card__image{
+            background-color: #a78bfa;
+        }
+
+        #filters{
+          margin-left: 1rem;
+          width: 100%;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 2rem;
+        }
+        .filter{
+          text-align: center;
+          opacity: 0.7;
+        }
+        .filter:hover{
+          opacity: 1;
+        }
+
+        .tax-info{
+         display: none;
+        }
+
+        .btn{
+          
+          color: green !important;
+        }
+        
+    </style>
+    <link rel="stylesheet" href="/css/style2.css">
+</head>
+<body>
+  
+<nav class="navbar navbar-expand-md bg-body-tertiary border-bottom ">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings"><i class="fa-solid fa-compass"></i></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+       
+        <a class="nav-link" href="/listings">Explore</a>
+        <a class="nav-link" href="/listings/new">Add new listings</a>
+       
+      </div>
+ <form class="d-flex ms-auto align-items-center" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+</div>
+
+      
+
+      <div class="navbar-nav ms-auto">
+        <% if(!currUser){ %>
+        <a class="nav-link "  href="/signup">sign up</a>
+        <a class="nav-link" href="/login">Login</a>
+        <% } %>
+        <% if(currUser){ %>
+        <a class="nav-link" href="/logout">LogOut</a>
+        <% } %>
+       
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<% if(error && error.length){ %>
+    
+<!-- From Uiverse.io by akshat-patel28 --> 
+ <div class="center">
+<div class="card4">
+  <svg class="wave1" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M0,256L11.4,240C22.9,224,46,192,69,192C91.4,192,114,224,137,234.7C160,245,183,235,206,213.3C228.6,192,251,160,274,149.3C297.1,139,320,149,343,181.3C365.7,213,389,267,411,282.7C434.3,299,457,277,480,250.7C502.9,224,526,192,549,181.3C571.4,171,594,181,617,208C640,235,663,277,686,256C708.6,235,731,149,754,122.7C777.1,96,800,128,823,165.3C845.7,203,869,245,891,224C914.3,203,937,117,960,112C982.9,107,1006,181,1029,197.3C1051.4,213,1074,171,1097,144C1120,117,1143,107,1166,133.3C1188.6,160,1211,224,1234,218.7C1257.1,213,1280,139,1303,133.3C1325.7,128,1349,192,1371,192C1394.3,192,1417,128,1429,96L1440,64L1440,320L1428.6,320C1417.1,320,1394,320,1371,320C1348.6,320,1326,320,1303,320C1280,320,1257,320,1234,320C1211.4,320,1189,320,1166,320C1142.9,320,1120,320,1097,320C1074.3,320,1051,320,1029,320C1005.7,320,983,320,960,320C937.1,320,914,320,891,320C868.6,320,846,320,823,320C800,320,777,320,754,320C731.4,320,709,320,686,320C662.9,320,640,320,617,320C594.3,320,571,320,549,320C525.7,320,503,320,480,320C457.1,320,434,320,411,320C388.6,320,366,320,343,320C320,320,297,320,274,320C251.4,320,229,320,206,320C182.9,320,160,320,137,320C114.3,320,91,320,69,320C45.7,320,23,320,11,320L0,320Z"
+      fill-opacity="1"
+    ></path>
+  </svg>
+
+  <div class="icon-container1">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 512 512"
+      stroke-width="0"
+      fill="currentColor"
+      stroke="currentColor"
+      class="icon1"
+    >
+      <path
+        d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"
+      ></path>
+    </svg>
+  </div>
+  <div class="message-text-container1">
+    <p class="message-text1"><%= error %></p>
+    <p class="sub-text1">Something went wrong</p>
+  </div>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 15 15"
+    stroke-width="0"
+    fill="none"
+    stroke="currentColor"
+    class="cross-icon1"
+  >
+    <path
+      fill="currentColor"
+      d="M11.7816 4.03157C12.0062 3.80702 12.0062 3.44295 11.7816 3.2184C11.5571 2.99385 11.193 2.99385 10.9685 3.2184L7.50005 6.68682L4.03164 3.2184C3.80708 2.99385 3.44301 2.99385 3.21846 3.2184C2.99391 3.44295 2.99391 3.80702 3.21846 4.03157L6.68688 7.49999L3.21846 10.9684C2.99391 11.193 2.99391 11.557 3.21846 11.7816C3.44301 12.0061 3.80708 12.0061 4.03164 11.7816L7.50005 8.31316L10.9685 11.7816C11.193 12.0061 11.5571 12.0061 11.7816 11.7816C12.0062 11.557 12.0062 11.193 11.7816 10.9684L8.31322 7.49999L11.7816 4.03157Z"
+      clip-rule="evenodd"
+      fill-rule="evenodd"
+    ></path>
+  </svg>
+</div>
+</div>
+
+  <% } %>
+
+
+
+<% if(success && success.length){ %>
+
+<!-- From Uiverse.io by akshat-patel28 --> 
+ <div class="center">
+<div class="card2">
+  <svg class="wave" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M0,256L11.4,240C22.9,224,46,192,69,192C91.4,192,114,224,137,234.7C160,245,183,235,206,213.3C228.6,192,251,160,274,149.3C297.1,139,320,149,343,181.3C365.7,213,389,267,411,282.7C434.3,299,457,277,480,250.7C502.9,224,526,192,549,181.3C571.4,171,594,181,617,208C640,235,663,277,686,256C708.6,235,731,149,754,122.7C777.1,96,800,128,823,165.3C845.7,203,869,245,891,224C914.3,203,937,117,960,112C982.9,107,1006,181,1029,197.3C1051.4,213,1074,171,1097,144C1120,117,1143,107,1166,133.3C1188.6,160,1211,224,1234,218.7C1257.1,213,1280,139,1303,133.3C1325.7,128,1349,192,1371,192C1394.3,192,1417,128,1429,96L1440,64L1440,320L1428.6,320C1417.1,320,1394,320,1371,320C1348.6,320,1326,320,1303,320C1280,320,1257,320,1234,320C1211.4,320,1189,320,1166,320C1142.9,320,1120,320,1097,320C1074.3,320,1051,320,1029,320C1005.7,320,983,320,960,320C937.1,320,914,320,891,320C868.6,320,846,320,823,320C800,320,777,320,754,320C731.4,320,709,320,686,320C662.9,320,640,320,617,320C594.3,320,571,320,549,320C525.7,320,503,320,480,320C457.1,320,434,320,411,320C388.6,320,366,320,343,320C320,320,297,320,274,320C251.4,320,229,320,206,320C182.9,320,160,320,137,320C114.3,320,91,320,69,320C45.7,320,23,320,11,320L0,320Z"
+      fill-opacity="1"
+    ></path>
+  </svg>
+
+  <div class="icon-container">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 512 512"
+      stroke-width="0"
+      fill="currentColor"
+      stroke="currentColor"
+      class="icon"
+    >
+      <path
+        d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"
+      ></path>
+    </svg>
+  </div>
+  <div class="message-text-container">
+    <p class="message-text"><%= success %></p>
+    <p class="sub-text">Everything seems great</p>
+  </div>
+ 
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 15 15"
+    stroke-width="0"
+    fill="none"
+    stroke="currentColor"
+    class="cross-icon"
+  >
+    <path
+      fill="currentColor"
+      d="M11.7816 4.03157C12.0062 3.80702 12.0062 3.44295 11.7816 3.2184C11.5571 2.99385 11.193 2.99385 10.9685 3.2184L7.50005 6.68682L4.03164 3.2184C3.80708 2.99385 3.44301 2.99385 3.21846 3.2184C2.99391 3.44295 2.99391 3.80702 3.21846 4.03157L6.68688 7.49999L3.21846 10.9684C2.99391 11.193 2.99391 11.557 3.21846 11.7816C3.44301 12.0061 3.80708 12.0061 4.03164 11.7816L7.50005 8.31316L10.9685 11.7816C11.193 12.0061 11.5571 12.0061 11.7816 11.7816C12.0062 11.557 12.0062 11.193 11.7816 10.9684L8.31322 7.49999L11.7816 4.03157Z"
+      clip-rule="evenodd"
+      fill-rule="evenodd"
+    ></path>
+  </svg>
+</div>
+
+</div>
+
+
+<% } %>
+
+
+
+
+
+
+
+
+<div id="filters">
+  <div class="filter">
+    <div><i class="fa-solid fa-fire"></i></div>
+    <p>Trending</p>
+  </div>
+  <div class="filter">
+    <div><i class="fa-solid fa-bed"></i></div>
+    <p>Rooms</p>
+  </div>
+  <div class="filter">
+    <div><i class="fa-solid fa-mountain-city"></i></div>
+    <p>Iconic city</p>
+  </div>
+  <div class="filter">
+    <div><i class="fa-solid fa-mountain"></i></div>
+    <p>Mountains</p>
+</div>
+     <div class="filter">
+    <div><i class="fa-brands fa-fort-awesome"></i></div>
+    <p>Castles</p>
+
+  </div>
+  <div class="filter">
+    <div><i class="fa-solid fa-person-swimming"></i></div>
+    <p>Amazing pools</p>
+  </div>
+   <div class="filter">
+    <div><i class="fa-solid fa-campground"></i></div>
+    <p>Camping</p>
+    </div>
+     <div class="filter">
+    <div><i class="fa-solid fa-tractor"></i></div>
+    <p>Farms</p>
+  </div>
+  <div class="filter">
+    <div><i class="fa-solid fa-snowman"></i></div>
+    <p>Artic</p>
+    </div>
+  <div class="filter">
+    <div><i class="fa-solid fa-igloo"></i></div>
+    <p>Domes</p>
+  </div>
+  <div class="filter">
+    <div><i class="fa-solid fa-sailboat"></i></i></div>
+    <p>Boats</p>
+    </div>
+     
+<div class="text">
+  <p>Display total after taxes</p>
+</div>
+
+  <div class="tax-toggle">
+   
+    <!-- From Uiverse.io by Galahhad --> 
+<label id="bb8-toggle" class="bb8-toggle">
+      <input class="bb8-toggle__checkbox" type="checkbox">
+      <div class="bb8-toggle__container">
+        <div class="bb8-toggle__scenery">
+          <div class="bb8-toggle__star"></div>
+          <div class="bb8-toggle__star"></div>
+          <div class="bb8-toggle__star"></div>
+          <div class="bb8-toggle__star"></div>
+          <div class="bb8-toggle__star"></div>
+          <div class="bb8-toggle__star"></div>
+          <div class="bb8-toggle__star"></div>
+          <div class="tatto-1"></div>
+          <div class="tatto-2"></div>
+          <div class="gomrassen"></div>
+          <div class="hermes"></div>
+          <div class="chenini"></div>
+          <div class="bb8-toggle__cloud"></div>
+          <div class="bb8-toggle__cloud"></div>
+          <div class="bb8-toggle__cloud"></div>
+        </div>
+        <div class="bb8">
+          <div class="bb8__head-container">
+            <div class="bb8__antenna"></div>
+            <div class="bb8__antenna"></div>
+            <div class="bb8__head"></div>
+          </div>
+          <div class="bb8__body"></div>
+        </div>
+        <div class="artificial__hidden">
+          <div class="bb8__shadow"></div>
+        </div>
+       
+      </div>
+    </label>
+     
+  </div>
+</div>
+
+  </div>
+
+  
+
+    
+    
+     <% for(listing of allListings){ %>
+        <a href="/listings/<%= listing._id %>">
+<div class="card">
+  <div class="card__shine"></div>
+  <div class="card__glow"></div>
+  <div class="card__content">
+    <div class="card__badge">NEW</div>
+    <div  class="card__image"><img src="<%= listing.image.url %>" alt=""></div>
+    <div class="card__text">
+      <p class="card__title"><%= listing.title %></p>
+      <p class="card__description"><%= listing.description %></p>
+    </div>
+    <div class="card__footer">
+      <div class="card__price">&#8377;
+        <%= listing.price.toLocaleString("en-in") %>/night
+        &nbsp;&nbsp;
+        <i class="tax-info">+18% GST</i>
+      </div>
+      
+
+      <div class="card__button">
+        <svg height="16" width="16" viewBox="0 0 24 24">
+          <path
+            stroke-width="2"
+            stroke="currentColor"
+            d="M4 12H20M12 4V20"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+</a>
+ <%   } %>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.cross-icon').forEach(svg => {
+        svg.style.cursor = 'pointer';
+        svg.addEventListener('click', () => {
+          const center = svg.closest('.center');
+          if (center) center.style.display = 'none';
+        });
+      });
+    });
+
+    let taxswitch = document.querySelector(".bb8-toggle__checkbox")
+    taxswitch.addEventListener("change",()=>{
+      console.log("change")
+
+      let taxinfo = document.querySelectorAll(".tax-info")
+for(let info of taxinfo){
+
+  if(info.style.display!="inline"){
+    info.style.display="inline"
+    
+  }else{
+    info.style.display="none"
+   
+  }
+    }})
+    
+  </script>
+
+ <script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,361 @@
+body{
+     font-family: "Plus Jakarta Sans", sans-serif !important;
+    
+
+ display: flex;
+flex-direction: column;
+height: 100vh;
+
+}
+
+.container{
+    z-index: 1;
+}
+
+
+.navbar{
+    height: 5rem;
+    position: sticky !important;
+    z-index: 10;
+    top: 0;
+    background-color: aliceblue;
+}
+.fa-compass{ 
+    color: #fe424d;
+    font-size: 2rem;
+}
+.nav-link{
+    color: #222222 !important;
+}
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+.f-info-links, .f-info-socials,.f-info-brand{
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.f-info-socials i{ 
+     font-size:1.2rem ;
+     margin-right: 1rem;
+}
+
+
+.f-info-links a:hover{
+    text-decoration: underline;
+   
+}
+
+footer{
+    position: static;
+    width: 100%;
+    bottom: 0;
+}
+
+.f-info{
+    background-color: #ebebeb;
+    height: 8rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:space-evenly ;
+    text-align: center;
+}
+.card{
+  
+     border: none !important;
+     margin-bottom: 2rem; 
+      overflow: hidden !important;
+}
+img{
+border-radius: 1rem !important;
+transition: all ease 0.7s !important;
+width: 100% !important;
+object-fit: cover !important;
+
+
+}
+ img:hover{
+    scale: 1.1 !important;
+}
+
+.card-body{
+    padding: 0 !important;
+     
+    z-index: 1 !important;
+
+}
+
+.card-text p{
+    font-size: 400 !important ;
+}
+
+.listing-line{
+    text-decoration: none;
+}
+
+.show-img{
+    height: 30vh;
+}
+.btns{
+    display: flex;
+}
+
+
+.ravi{
+    padding: 1rem !important;
+    border: 2px solid #060606 !important;
+}
+
+
+
+
+/* From Uiverse.io by akshat-patel28 */ 
+
+.center{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+}
+.card2 {
+  
+  width: 460px;
+  height: 80px;
+  display: block;
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  background-color: #ffffff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 15px;
+}
+.wave {
+  position: absolute;
+  transform: rotate(90deg);
+  left: -31px;
+  top: 32px;
+  width: 80px;
+  fill: #04e4003a;
+}
+.icon-container {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #04e40048;
+  border-radius: 50%;
+  margin-left: 8px;
+}
+.icon {
+  width: 17px;
+  height: 17px;
+  color: #269b24;
+}
+.message-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-grow: 1;
+}
+.message-text,
+.sub-text {
+  margin: 0;
+  cursor: default;
+}
+.message-text {
+  color: #269b24;
+  font-size: 17px;
+  font-weight: 700;
+}
+.sub-text {
+  font-size: 14px;
+  color: #555;
+}
+.cross-icon {
+  width: 18px;
+  height: 18px;
+  color: #555;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* From Uiverse.io by akshat-patel28 */ 
+.card4 {
+  width: 330px;
+  height: 80px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  background-color: #ffffff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 15px;
+}
+.wave1 {
+  position: absolute;
+  transform: rotate(90deg);
+  left: -31px;
+  top: 32px;
+  width: 80px;
+  fill: #fc0c0c3a;
+}
+.icon-container1 {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fc0c0c48;
+  border-radius: 50%;
+  margin-left: 8px;
+}
+.icon1 {
+  width: 17px;
+  height: 17px;
+  color: #d10d0d;
+}
+.message-text-container1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-grow: 1;
+}
+.message-text1,
+.sub-text1 {
+  margin: 0;
+  cursor: default;
+}
+.message-text1 {
+  color: #d10d0d;
+  font-size: 17px;
+  font-weight: 700;
+}
+.sub-text1 {
+  font-size: 14px;
+  color: #555;
+}
+.cross-icon1 {
+  width: 18px;
+  height: 18px;
+  color: #555;
+  cursor: pointer;
+}
+
+
+
+/* From Uiverse.io by mi-series */ 
+.container1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.form_area1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #EDDCD9;
+  height: auto;
+  width: auto;
+  border: 2px solid #264143;
+  border-radius: 20px;
+  box-shadow: 3px 4px 0px 1px #E99F4C;
+}
+
+.title1 {
+  color: #264143;
+  font-weight: 900;
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+.sub_title1 {
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+.form_group1 {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  margin: 10px;
+}
+
+.form_style1 {
+  outline: none;
+  border: 2px solid #264143;
+  box-shadow: 3px 4px 0px 1px #E99F4C;
+  width: 290px;
+  padding: 12px 10px;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.form_style1:focus, .btn1:focus {
+  transform: translateY(4px);
+  box-shadow: 1px 2px 0px 0px #E99F4C;
+}
+
+.btn1 {
+  padding: 15px;
+  margin: 25px 0px;
+  width: 290px;
+  font-size: 15px;
+  background: #DE5499;
+  border-radius: 10px;
+  font-weight: 800;
+  box-shadow: 3px 3px 0px 0px #E99F4C;
+}
+
+.btn1:hover {
+  opacity: .9;
+}
+
+.link1 {
+  font-weight: 800;
+  color: #264143;
+  padding: 5px;
+}
+
+ #map {
+      width:60vh ;
+      height: 400px;
+    }
+
+
+
+  
